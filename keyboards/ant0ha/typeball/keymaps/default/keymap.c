@@ -21,21 +21,22 @@
 #define HOME_SCLN MT(MOD_LGUI, KC_SCLN)
 
 #define HOME_MOU MO(_MOUSE)
-#define HOME_NAV MO(_NAV)
-
-
+#define HOME_NAV LT(_NAV, KC_ENT)
+#define HOME_NUM LT(_NUMBER, KC_BSPC)
+#define HOME_SYM LT(_SYMBOL, KC_SPC)
+#define HOME_MAN LT(_MANAGEMENT, KC_TAB)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   KC_LBRC,
+       XXXXXXX,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX,  HOME_A, HOME_S, HOME_D, HOME_F,    KC_G,        KC_H,    HOME_J,  HOME_K,  HOME_L, HOME_SCLN, KC_QUOT,
+       XXXXXXX,  HOME_A, HOME_S, HOME_D, HOME_F,    KC_G,        KC_H,    HOME_J,  HOME_K,  HOME_L, HOME_SCLN, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RBRC,
+       XXXXXXX,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                    HOME_MOU, HOME_NAV,  MO(_MANAGEMENT),       KC_BSPC,  LT(_NUMBER, KC_SPC)
+                            HOME_MOU, HOME_NAV,  HOME_MAN,        HOME_NUM, HOME_SYM
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -43,9 +44,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, KC_ESC,  XXXXXXX, KC_PGUP, C(KC_PSCR), KC_F11,   XXXXXXX, XXXXXXX, KC_UP, KC_INS, KC_BSPC, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_TAB,  KC_HOME, KC_PGDN, KC_END,  KC_F2,       XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_ENT, XXXXXXX,
+       XXXXXXX, XXXXXXX,  KC_HOME, KC_PGDN, KC_END,  KC_F2,       XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL, XXXXXXX, XXXXXXX,
+       XXXXXXX, KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, KC_DEL, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   XXXXXXX, XXXXXXX, _______,    KC_LCTL, KC_LSFT
   //                            ╰───────────────────────────╯ ╰──────────────────╯
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_NUMBER] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX, S(KC_1), S(KC_2) , S(KC_3), S(KC_4), S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), KC_GRV,
+       XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,             KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, MT(MOD_LGUI, KC_1), MT(MOD_LALT, KC_2), MT(MOD_RSFT, KC_3), MT(MOD_LCTL, KC_4), KC_5,    KC_6, MT(MOD_LCTL, KC_7), MT(MOD_RSFT, KC_8), MT(MOD_LALT, KC_9), MT(MOD_LGUI, KC_0), KC_EQL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
@@ -67,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, S(KC_1), S(KC_2) , S(KC_3), S(KC_4), S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), KC_PMNS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, MT(MOD_LGUI, KC_1), MT(MOD_LALT, KC_2), MT(MOD_RSFT, KC_3), MT(MOD_LCTL, KC_4), KC_5,    KC_6, MT(MOD_LCTL, KC_7), MT(MOD_RSFT, KC_8), MT(MOD_LALT, KC_9), MT(MOD_LGUI, KC_0), KC_EQL,
+       XXXXXXX, MT(MOD_LGUI, KC_1), MT(MOD_LALT, KC_2), MT(MOD_RSFT, KC_3), MT(MOD_LCTL, KC_4), KC_5,    KC_6, MT(MOD_LCTL, KC_LBRC), MT(MOD_RSFT, KC_RBRC), MT(MOD_LALT, KC_QUOT), MT(MOD_LGUI, KC_0), KC_EQL,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, S(KC_GRV), S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    KC_GRV, KC_LBRC,  KC_RBRC, S(KC_EQL), KC_UNDS, XXXXXXX,
+       XXXXXXX, KC_TILDE, S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    KC_GRV, KC_PLUS, KC_RBRC, KC_QUOT, KC_UNDS, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,    _______, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
@@ -93,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, KC_MPLY, KC_VOLD, KC_MNXT, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       QK_BOOT, XXXXXXX, XXXXXXX, KC_MUTE, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, QK_BOOT, XXXXXXX, KC_MUTE, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOT, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   XXXXXXX, XXXXXXX, _______,    XXXXXXX, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯

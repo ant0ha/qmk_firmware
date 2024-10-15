@@ -206,29 +206,31 @@ def convert_from_hex_to_uf2(buf):
 
 def to_str(b):
     return b.decode("utf-8")
+    # return b
 
 def get_drives():
     drives = []
     if sys.platform == "win32":
         r = subprocess.check_output(["wmic", "PATH", "Win32_LogicalDisk",
-                                     "get", "DeviceID,", "VolumeName,",
+                                     "get", "DeviceID,",
                                      "FileSystem,", "DriveType"])
         for line in to_str(r).split('\n'):
             words = re.split('\s+', line)
             if len(words) >= 3 and words[1] == "2" and words[2] == "FAT":
                 drives.append(words[0])
-    else:
-        searchpaths = ["/media"]
-        if sys.platform == "darwin":
-            searchpaths = ["/Volumes"]
-        elif sys.platform == "linux":
-            searchpaths += ["/media/" + os.environ["USER"], '/run/media/' + os.environ["USER"]]
+    # else:
+    #     searchpaths = ["/media"]
+    #     if sys.platform == "darwin":
+    #         searchpaths = ["/Volumes"]
+    #     elif sys.platform == "linux":
+    #         searchpaths += ["/media/" + os.environ["USER"], '/run/media/' + os.environ["USER"]]
 
-        for rootpath in searchpaths:
-            if os.path.isdir(rootpath):
-                for d in os.listdir(rootpath):
-                    if os.path.isdir(rootpath):
-                        drives.append(os.path.join(rootpath, d))
+    #     for rootpath in searchpaths:
+    #         if os.path.isdir(rootpath):
+    #             for d in os.listdir(rootpath):
+    #                 if os.path.isdir(rootpath):
+    #                     drives.append(os.path.join(rootpath, d))
+
 
 
     def has_info(d):
