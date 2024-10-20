@@ -68,9 +68,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
        XXXXXXX, S(KC_1), S(KC_2) , S(KC_3), S(KC_4), S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), KC_PMNS,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, MT(MOD_LGUI, KC_1), MT(MOD_LALT, KC_2), MT(MOD_RSFT, KC_3), MT(MOD_LCTL, KC_4), KC_5,    KC_6, MT(MOD_LCTL, KC_LBRC), MT(MOD_RSFT, KC_RBRC), MT(MOD_LALT, KC_QUOT), MT(MOD_LGUI, KC_0), KC_EQL,
+       XXXXXXX, MT(MOD_LGUI, KC_1), MT(MOD_LALT, KC_2), MT(MOD_RSFT, KC_3), MT(MOD_LCTL, KC_4), KC_5,    KC_EQL, MT(MOD_LCTL, KC_LBRC), MT(MOD_RSFT, KC_RBRC), MT(MOD_LALT, KC_QUOT), MT(MOD_LGUI, KC_0), XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_TILDE, S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    KC_GRV, KC_PLUS, KC_RBRC, KC_QUOT, KC_UNDS, XXXXXXX,
+       XXXXXXX, KC_TILDE, S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    KC_MINUS, KC_PLUS, KC_UNDS, KC_QUOT, KC_UNDS, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
                                   _______, _______, XXXXXXX,    _______, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
