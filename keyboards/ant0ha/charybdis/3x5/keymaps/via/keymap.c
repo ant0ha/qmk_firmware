@@ -101,7 +101,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 /** \brief Mouse emulation and pointer functions. */
 #define LAYOUT_LAYER_POINTER                                                                  \
     XXXXXXX, KC_MS_WH_LEFT, KC_MS_WH_UP, KC_MS_WH_RIGHT, XXXXXXX,  S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, \
-    XXXXXXX, XXXXXXX, KC_MS_WH_DOWN, KC_MS_BTN1, KC_MS_BTN2, ______________HOME_ROW_R______________, \
+    XXXXXXX, XXXXXXX, KC_MS_WH_DOWN, KC_MS_BTN1, KC_MS_BTN2,      XXXXXXX, KC_MS_WH_LEFT, XXXXXXX, KC_MS_WH_RIGHT, XXXXXXX, \
     _______, DRGSCRL, SNIPING, EE_CLR,  QK_BOOT, QK_BOOT, EE_CLR,  SNIPING, DRGSCRL, _______, \
                       KC_BTN2, KC_BTN1, KC_BTN3, KC_BTN3, KC_BTN1
 
@@ -141,8 +141,8 @@ static uint16_t auto_pointer_layer_timer = 0;
  */
 #define LAYOUT_LAYER_SYMBOLS                                                                  \
     S(KC_1), S(KC_2) , S(KC_3), S(KC_4), S(KC_5),   S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0),  \
-    KC_1, KC_2, KC_3, KC_4, KC_5,    KC_EQL, KC_LBRC, KC_RBRC, KC_QUOT, KC_0,  \
-    KC_TILDE, S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    KC_MINUS, KC_PLUS, KC_UNDS, KC_QUOT, KC_UNDS,  \
+    KC_GRAVE, KC_2, KC_3, KC_MINUS, KC_UNDS,    KC_EQL, KC_LBRC, KC_RBRC, KC_QUOT, KC_DQUO,  \
+    KC_TILDE, S(KC_BSLS), KC_BSLS, KC_LCBR, KC_RCBR,    XXXXXXX, KC_PLUS, KC_LT, KC_GT, XXXXXXX,  \
                     _______, _______, XXXXXXX,    _______, XXXXXXX
 
 /**
